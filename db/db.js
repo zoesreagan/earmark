@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
-const connectionString = process.env.MONGODB_URI;
+// const connectionString = process.env.MONGODB_URI;
 
 
-mongoose.connect(connectionString);
+mongoose.connect('mongodb://localhost');
 
 mongoose.connection.on("connected", () => {
 	console.log("mongoose connected to db");

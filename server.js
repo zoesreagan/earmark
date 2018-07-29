@@ -8,7 +8,9 @@ const session = require('express-session');
 const expressLayouts = require('express-ejs-layouts');
 const path = require('path')
 
-
+// app.get('/', (req, res) => res.send('Hello World!'))
+//
+// app.listen(3000, () => console.log('Example app listening on port 3000!'))
 app.set('view engine', 'ejs')
 require('./db/db');
 
@@ -44,8 +46,8 @@ app.use((req, res, next) => {
 
 
 // CONTROLLERS
-const creatorController = require('./controllers/creatorController');
-app.use('/creator', creatorController);
+const artistController = require('./controllers/artistController');
+app.use('/artist', artistController);
 const userController = require('./controllers/userController');
 app.use('/user', userController);
 const authController = require('./controllers/authController');
@@ -53,10 +55,6 @@ app.use('/', authController);
 const eventController = require('./controllers/eventController');
 app.use('/event', eventController);
 
-// // seeding data -- adding some data when you start development
-// app.get('/seed', (req, res) => {
-// 	res.send('I just added some data for you');
-// })
 
 app.listen(process.env.PORT || PORT, () => {
 	console.log('Server is running on PORT: ' + PORT);

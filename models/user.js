@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Creator = require('./creator.js');
+const Artist = require('./artist.js');
 const Event = require('./event.js')
 
 // console.log(Artist); // returns an empty object
@@ -14,11 +14,11 @@ const userSchema = new mongoose.Schema({
       avatar: String,
       // we have to push the name and id manually from the artist controller
       // instead of calling the whole schema
-      creators: [{
+      artists: [{
       	name: String,
-      	creator_id: String
+      	artist_id: String
       }],
-      creatorsLiked: [{
+      artistsLiked: [{
         name: String,
         id: String
       }],

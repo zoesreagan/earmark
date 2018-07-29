@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Event = require('./event.js');
 const User = require('./user.js');
 
-const creatorSchema = new mongoose.Schema({
+const artistSchema = new mongoose.Schema({
       name: {
         type: String,
         required: true
@@ -21,10 +21,10 @@ const creatorSchema = new mongoose.Schema({
         username: String,
         id: String
       }],
-      creator_id: String
+      artist_id: String
 });
 
 
 //creating collection, putting collection into database
 //and setting schema onto information
-module.exports = mongoose.model('Creator', creatorSchema);
+module.exports = mongoose.model('artist', artistSchema);
