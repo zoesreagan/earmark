@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Artist Profile</title>
-  	<link rel="stylesheet" href="../css/style.css">
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/lux/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -18,20 +17,35 @@
   <body>
 <!--       NAV
  -->  <header>
-        <nav id="navbar">
-            <div class="container-fluid">
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+           </button>
 
-                <ul class="nav navbar-left">
-                  <li class="active"><a href="/">Home</a></li>
-                  <li><a href="/user">Users</a></li>
-                  <li><a href="/event">Events</a></li>
-                </ul>
+           <div class="collapse navbar-collapse" id="navbarColor02">
+             <ul class="navbar-nav mr-auto">
 
-                <ul class="nav navbar-right">
-                  <li><a href="/user"><span class="glyphicon glyphicon-plus"></span> Back to Users</a></li>
-                </ul>
-            </div>
-        </nav>
+               <li class="nav-item active">
+                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+               </li>
+
+               <li class="nav-item">
+                 <a class="nav-link" href="/user">Community</a>
+               </li>
+
+               <li class="nav-item">
+                 <a class="nav-link" href="/event">Happenings</a>
+               </li>
+               </ul>
+
+               <ul class="navbar-nav">
+                 <li class="nav-item">
+                   <a class="nav-link" href="/artist">See More Creators</a>
+                 </li>
+               </ul>
+
+           </div>
+         </nav>
 
       </header>
 
@@ -235,7 +249,7 @@
 <!--   LOGOUT -->
   <footer class="container-fluid text-center">
     <form action="/logout" method="GET">
-        <input type="submit" class="btn-block" id="logout" value="Logout <%=user.username%>" />
+        <input type="submit" class="btn btn-danger" id="logout" value="Logout <%=user.username%>" />
     </form>
   </footer>
 

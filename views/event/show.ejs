@@ -2,8 +2,7 @@
 <html>
 <head>
 	<title>User Profile</title>
-	<link rel="stylesheet" href="../css/style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/lux/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style>
@@ -14,23 +13,34 @@
 
 <!-- 	NAV
  --><header>
-		<nav id="navbar">
-				<div class="container-fluid">
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+		 <span class="navbar-toggler-icon"></span>
+	 </button>
 
-						<ul class="nav navbar-left">
-							<li class="active"><a href="/">Home</a></li>
-							<li><a href="/artist">Artists</a></li>
-							<li><a href="/event">Events</a></li>
-						</ul>
+	 <div class="collapse navbar-collapse" id="navbarColor02">
+		 <ul class="navbar-nav mr-auto">
 
-						<ul class="nav navbar-right">
-							<li><a href="/user"><span class="glyphicon glyphicon-plus"></span> Back to Users</a></li>
-						</ul>
-					</div>
-				</div>
-			</nav>
+			 <li class="nav-item active">
+				 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+			 </li>
 
-		</div>
+			 <li class="nav-item">
+				 <a class="nav-link" href="/user">Community</a>
+			 </li>
+
+			 <li class="nav-item">
+				 <a class="nav-link" href="/artist">Creators</a>
+			 </li>
+
+			 <ul class="navbar-nav">
+				 <li class="nav-item">
+					 <a class="nav-link" href="/event>">Return to Happenings</a>
+				 </li>
+			 </ul>
+
+	 </div>
+ </nav>
 	</header>
 
 	<main>
@@ -134,7 +144,7 @@
 <!-- 		LOGOUT BUTTON
  --><footer class="container-fluid text-center">
 		<form action="/logout" method="GET">
-	   		<input type="submit" class="btn-block" id="logout" value="Logout <%=currentUser.username%>" />
+	   		<input type="submit" class="btn btn-danger" id="logout" value="Logout <%=currentUser.username%>" />
 		</form>
 	</footer>
 

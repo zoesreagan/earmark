@@ -2,9 +2,7 @@
 <html>
 <head>
 	<title>All Users</title>
-	<link rel="stylesheet" href="../css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Maven+Pro:500,700|Wire+One" rel="stylesheet">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/lux/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style>
@@ -17,25 +15,46 @@
 
 	<header>
 <!-- 		NAV
- -->	<nav id="navbar">
-				<div class="container-fluid">
+ -->
+		 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
 
-						<ul class="nav navbar-left">
-							<li class="active"><a href="/">Home</a></li>
-							<li><a href="/artist">Artists</a></li>
-							<li><a href="/event">Events</a></li>
+				<div class="collapse navbar-collapse" id="navbarColor02">
+					<ul class="navbar-nav mr-auto">
+
+						<li class="nav-item active">
+							<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="/user">Community</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="/artist">Creators</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="/event">Happenings</a>
+						</li>
 						</ul>
 
-						<ul class="nav navbar-right">
-							<li><a href="/artist/new"><span class="glyphicon glyphicon-plus"></span> Become an Artist</a></li>
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link" href="/artist/new">Become a Creator</a>
+							</li>
 						</ul>
+
 				</div>
 			</nav>
 
+
 			<div class="jumbotron jumbotron-fluid">
 		  <div class="container">
-		    <h1 class="display-4">Users</h1>
-		    <p class="lead">Explore your community</p>
+		    <h1 class="display-4">Community</h1>
+		    <p class="lead">Explore likeminded members</p>
 		  </div>
 		</div>
 
@@ -69,7 +88,7 @@
 
 		<%if (loggedIn) { %>
 			<form action="/logout" method="GET">
-	   			<input type="submit" class="btn-block" id="logout" value="Logout <%=user.username%>" />
+	   			<input type="submit" class="btn btn-danger" id="logout" value="Logout <%=user.username%>" />
 			</form>
 		<%}%>
 
