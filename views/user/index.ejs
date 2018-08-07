@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>All Users</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Maven+Pro:500,700|Wire+One" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+	body { padding-top: 10px; };
+	</style>
+</head>
+
+
+<body>
+
+	<header>
+<!-- 		NAV
+ -->	<nav id="navbar">
+				<div class="container-fluid">
+
+						<ul class="nav navbar-left">
+							<li class="active"><a href="/">Home</a></li>
+							<li><a href="/artist">Artists</a></li>
+							<li><a href="/event">Events</a></li>
+						</ul>
+
+						<ul class="nav navbar-right">
+							<li><a href="/artist/new"><span class="glyphicon glyphicon-plus"></span> Become an Artist</a></li>
+						</ul>
+				</div>
+			</nav>
+
+			<div class="jumbotron jumbotron-fluid">
+		  <div class="container">
+		    <h1 class="display-4">Users</h1>
+		    <p class="lead">Explore your community</p>
+		  </div>
+		</div>
+
+	</header>
+
+	<main>
+<!-- 		DISPLAY USERS
+ -->
+			 <div class="container-fluid">
+				 <div class="row">
+
+					 <%for (let i = 0; i < users.length; i++) {%>
+						<div class="col-sm-3 col-md-4">
+							<div class="index_profile">
+
+							<img src="<%=users[i].avatar%>" id="userListPic" class="img-responsive" style="width:90vh" alt="">
+								<p><a class="indexLink" href="/user/<%=users[i].id%>"><%=users[i].username%></a></p>
+
+							</div>
+					  </div>
+
+				<%}%>
+
+			</div>
+		</div>
+
+	</main>
+
+<!-- 	LOGOUT
+ --><footer class="container-fluid text-center">
+
+		<%if (loggedIn) { %>
+			<form action="/logout" method="GET">
+	   			<input type="submit" class="btn-block" id="logout" value="Logout <%=user.username%>" />
+			</form>
+		<%}%>
+
+	</footer>
+
+
+	<script src="/js/app.js"></script>
+
+</body>
+</html>
